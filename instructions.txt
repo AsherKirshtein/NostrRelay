@@ -1,0 +1,4 @@
+Install 
+
+1. docker build -t nostr-rs-relay .
+2. docker compose up
