@@ -1,0 +1,12 @@
+services:
+  nostr-relay:
+    image: nostr-rs-relay:latest
+    container_name: nostr-rs-relay
+    ports:
+      - "7000:8080"
+    volumes:
+      - ~/docker-data:/usr/src/app/db
+    environment:
+      - TZ=Etc/UTC
+      - RUST_LOG=info,nostr_rs_relay=info
+    command: ./nostr-rs-relay --db /usr/src/app/db
