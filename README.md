@@ -34,6 +34,15 @@ Most of the code comes from with a few changes I added to make it more usable: [
 ## Additions to take note of 
 
 1. Added the Docker-Compose.yml this enables us to call docker to compose up and start our relay that way.
-2. Also the pythonClient.py, is for testing only. Just to verify I can send messages to my relay. 
+2. Also the pythonClient.py, is for testing only. Just to verify I can send messages to my relay.
+
+
+## To start it up
+
+1. Need to install docker and have login
+2. Need to CD into Nostr directory if not already there
+3. Need to build the file: "docker build -t nostr-rs-relay ." needs to be done anytime there are changes
+4. Then run: "docker compose up"
+5. Recommend: Getting Docker-Desktop to view the relay and its analytics
 
 
