@@ -44,7 +44,7 @@ time.sleep(1.25)  # Allow the connections to open
 # Generate private keys for multiple senders
 num_senders = 5  # Number of unique senders
 senders = generate_private_keys(num_senders)
-messages_to_send = 10
+messages_to_send = 18
 # Loop to send 10 random messages
 for i in range(messages_to_send):
     # Select a random sender
