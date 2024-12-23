@@ -1,4 +1,4 @@
-# [NostrRelay]
+# NostrRelay
 
 This is a [nostr](https://github.com/nostr-protocol/nostr) relay,
 written in Rust.  It currently supports the entire relay protocol and
