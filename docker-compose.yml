@@ -11,4 +11,4 @@ services:
     environment:
       - TZ=Etc/UTC
       - RUST_LOG=info,nostr_rs_relay=info
-    command: ./nostr-rs-relay --db /usr/src/app/db
+    command: ./nostr-rs-relay --db /usr/src/app/db --host 0.0.0.0
