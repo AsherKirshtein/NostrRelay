@@ -1,6 +1,8 @@
 services:
   nostr-relay:
-    image: nostr-rs-relay:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: nostr-rs-relay
     ports:
       - "7000:8080"
