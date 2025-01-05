@@ -47,7 +47,7 @@ nip42_auth = true
 nip42_dms = true
 
 [verified_users]
-mode = "enabled"
+mode = "disabled"
 verify_expiration = "1 week"
 verify_update_frequency = "24 hours"
 max_consecutive_failures = 10
