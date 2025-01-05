@@ -9,6 +9,7 @@ services:
     volumes:
       - ./db:/usr/src/app/db
       - ./config.toml:/usr/src/app/config.toml
+      - ./log:/usr/src/app/log
     environment:
       - TZ=Etc/UTC
       - RUST_LOG=info,nostr_rs_relay=info
