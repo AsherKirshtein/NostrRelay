@@ -5,11 +5,11 @@ services:
       dockerfile: Dockerfile
     container_name: nostr-rs-relay
     ports:
-      - "7000:8080"
+      - "7000:8080"  # Adjusted the exposed ports
     volumes:
       - ./db:/usr/src/app/db
       - ./config.toml:/usr/src/app/config.toml
     environment:
       - TZ=Etc/UTC
       - RUST_LOG=info,nostr_rs_relay=info
-    command: ./nostr-rs-relay --db /usr/src/app/db --host 0.0.0.0 --config /usr/src/app/config.toml
+    command: ./nostr-rs-relay --config /usr/src/app/config.toml
