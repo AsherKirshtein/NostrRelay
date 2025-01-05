@@ -2,19 +2,19 @@
 
 [info]
 # The advertised URL for the Nostr websocket.
-relay_url = "wss://nostr.example.com/"
+relay_url = "wss://18.221.154.194:7000/"
 
 # Relay information for clients.  Put your unique server name here.
-name = "nostr-rs-relay"
+name = "POWR-nostr-rs-relay"
 
 # Description
-description = "A newly created nostr-rs-relay.\n\nCustomize this with your own info."
+description = "This is a private relay for Proof of Workout(POW)."
 
 # Administrative contact pubkey (32-byte hex, not npub)
 #pubkey = "0c2d168a4ae8ca58c9f1ab237b5df682599c6c7ab74307ea8b05684b60405d41"
 
 # Administrative contact URI
-#contact = "mailto:contact@example.com"
+contact = "mailto: akirshtein@promotus.io"
 
 # Favicon location.  Relative to the current directory.  Assumes an
 # ICO format.
@@ -32,8 +32,7 @@ description = "A newly created nostr-rs-relay.\n\nCustomize this with your own i
 
 [database]
 # Database engine (sqlite/postgres).  Defaults to sqlite.
-# Support for postgres is currently experimental.
-#engine = "sqlite"
+engine = "sqlite"
 
 # Directory for SQLite files.  Defaults to the current directory.  Can
 # also be specified (and overriden) with the "--db dirname" command
@@ -54,19 +53,10 @@ description = "A newly created nostr-rs-relay.\n\nCustomize this with your own i
 # to approx the number of cores.
 #max_conn = 8
 
-# Database connection string.  Required for postgres; not used for
-# sqlite.
-#connection = "postgresql://postgres:nostr@localhost:7500/nostr"
-
-# Optional database connection string for writing.  Use this for
-# postgres clusters where you want to separate reads and writes to
-# different nodes.  Ignore for single-database instances.
-#connection_write = "postgresql://postgres:nostr@localhost:7500/nostr"
-
 [logging]
 # Directory to store log files.  Log files roll over daily.
-#folder_path = "./log"
-#file_prefix = "nostr-relay"
+folder_path = "./log"
+file_prefix = "nostr-relay"
 
 [grpc]
 # gRPC interfaces for externalized decisions and other extensions to
