@@ -13,52 +13,40 @@ data_directory = "./db"
 
 [logging]
 folder_path = "./log"
-file_prefix = "powr-relay"
+file_prefix = "relay-log"
 
 [network]
 address = "0.0.0.0"
 port = 8080
-# Adding this for better security behind a proxy
 remote_ip_header = "x-forwarded-for"
-# Reduced ping interval for better connection maintenance
 ping_interval = 180
 
 [options]
-# 30 minutes future event limit
 reject_future_seconds = 1800
 
 [limits]
-# Adding rate limits for better relay stability
 messages_per_sec = 10
 subscriptions_per_min = 30
+event_kind_allowlist = [
+    0,    # Metadata
+    1,    # Short text note
+    5,    # Event deletion
+    7,    # Reaction
+    33,   # Parameterized replaceable events
+    30023, # Long-form content
+]
 max_event_bytes = 131072
 max_ws_message_bytes = 131072
 max_ws_frame_bytes = 131072
 broadcast_buffer = 16384
 event_persist_buffer = 4096
 
-# Limiting to specific event kinds relevant for workout tracking
-event_kind_allowlist = [
-    0,    # Metadata
-    1,    # Short text note
-    7,    # Reaction
-    30023, # Long-form content
-    10000, # Mutable events (can be used for workout logs)
-    30000, # Custom events for workout data
-    30001, # Custom events for workout verification
-]
-
-# Enable this to prevent server scraping
-limit_scrapers = true
-
 [authorization]
-# Uncomment and add trusted pubkeys for a private relay
-#pubkey_whitelist = [
-#    # Add your team's public keys here
-#]
+nip26_auth = true
+nip42_auth = true
+nip42_dms = true
 
 [verified_users]
-# Enable NIP-05 verification
 mode = "enabled"
 verify_expiration = "1 week"
 verify_update_frequency = "24 hours"
